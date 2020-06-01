@@ -1,0 +1,9 @@
+{
+  "engine": "cocos2d-html5",
+  "packages": "packages",
+  "version": "2.3.3",
+  "name": "GTV",
+  "uuid": "01f3c6e5-6819-4d85-bf06-2dd2549755ed",
+  "id": "f8bd7e01-79b4-4f0f-b6ca-ea58c891affe",
+  "isNew": false
+}
