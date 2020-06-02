@@ -10,6 +10,7 @@ cc.Class({
             default: null,
             type: cc.Prefab
         },
+
         // defaults, set visually when attaching this script to the Canvas
         text: 'Hello, World!'
     },
@@ -19,6 +20,7 @@ cc.Class({
         //this.label.string = this.text;
        
     },
+
     start:function()
     {
         for( let i=0;i<20;i++)
@@ -30,8 +32,11 @@ cc.Class({
             "aaaaa",
             "bbb",
             "ccc",
-            "ddd"
+            "ddd",
+            "2020",
+            this.node
             )
+            mView_Iteam_Prefab.active=true;
             this.ConTent_LayOut.node.addChild(mView_Iteam_Prefab);
         }
     },

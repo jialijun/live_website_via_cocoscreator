@@ -32,6 +32,10 @@ cc.Class({
             default: null,  
             type: cc.String,
         },
+        hlsurl:{
+            default: null,  
+            type: cc.String,
+        },
         title:{
             default: null,  
             type: cc.String,
@@ -72,6 +76,14 @@ cc.Class({
             default: null,  
             type: cc.Sprite,
         },
+        Play_video_Prefab: {
+            default: null,
+            type: cc.Prefab
+        },
+        Canvas_Node: {
+            default: null,
+            type: cc.Node
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -79,9 +91,50 @@ cc.Class({
      onLoad () {
 
      },
-    init(contenurl,headurl, title, user, watchno, time) {
+     popstatehandle:function(e)
+     {
+        alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能 
+        if(window.Play_video_Node!=null)
+        {
+            window.Play_video_Node.removeFromParent();
+            window.Play_video_Node.destroy();
+        let msate=window.history.state;//当前页面的参数，可以用这个参数，回复这个页面
+        }
+        window.removeEventListener("popstate",this.popstatehandle);
+     },
+     //被点击
+     ClickButton: function () {
+         //保证只有一个在播放
+        if(this.Canvas_Node.Play_video_Node!=null)
+        {
+            this.Canvas_Node.Play_video_Node.removeFromParent();
+            this.Canvas_Node.Play_video_Node.destroy();
+            this.Canvas_Node.Play_video_Node=null;
+        }
+        var mPlay_video_Prefab = cc.instantiate(this.Play_video_Prefab);
+        var mWidget = mPlay_video_Prefab.getComponent(cc.Widget);
+        mWidget.top=56;
+        mWidget.left=0;
+        mWidget.right=0;
+        mPlay_video_Prefab.active=true;
+        this.Canvas_Node.addChild(mPlay_video_Prefab);
+        this.Canvas_Node.Play_video_Node=mPlay_video_Prefab;
+        window.addEventListener("popstate", this.popstatehandle, false); 
+
+        //压入当前页面的参数，可以使用这个参数，回复当前页面
+        var state = {  
+            title: "title",  
+            url: "#"  
+          };  
+        window.history.pushState(state, "Play_video", "/Play_video.html");
+        window.Play_video_Node=mPlay_video_Prefab;
+        //window.history.state=state;
+    },
+    init(contenurl,headurl,hlsurl, title, user, watchno, time,CanvasNode) {
         this.contenurl = contenurl;
         this.headurl = headurl;
+        this.hlsurl = hlsurl;//视频的地址
+        this.hlsurl = hlsurl;//视频的地址
         this.title = title;
         this.user = user;
         this.watchno = watchno;
@@ -90,6 +143,7 @@ cc.Class({
         this.User_label.String = user;
         this.WatchNo_label.String = watchno;
         this.Time_label.String = time;
+        this.Canvas_Node = CanvasNode;
 
     },
     start () {

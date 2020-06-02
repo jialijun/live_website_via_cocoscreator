@@ -34,10 +34,13 @@
     "_components": [
       {
         "__id__": 41
+      },
+      {
+        "__id__": 42
       }
     ],
     "_prefab": {
-      "__id__": 42
+      "__id__": 44
     },
     "_opacity": 255,
     "_color": {
@@ -61,7 +64,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1797.836,
+        1933.924,
         0,
         0,
         0,
@@ -1299,6 +1302,7 @@
     "_enabled": true,
     "contenurl": null,
     "headurl": null,
+    "hlsurl": null,
     "title": null,
     "user": null,
     "watchno": null,
@@ -1309,6 +1313,8 @@
     "Time_label": null,
     "Content_sprite": null,
     "Head_sprite": null,
+    "Play_video_Prefab": null,
+    "Canvas_Node": null,
     "_id": ""
   },
   {
@@ -1396,6 +1402,7 @@
     "_enabled": true,
     "contenurl": null,
     "headurl": null,
+    "hlsurl": null,
     "title": null,
     "user": null,
     "watchno": null,
@@ -1406,6 +1413,8 @@
     "Time_label": null,
     "Content_sprite": null,
     "Head_sprite": null,
+    "Play_video_Prefab": null,
+    "Canvas_Node": null,
     "_id": ""
   },
   {
@@ -1429,6 +1438,7 @@
     "_enabled": true,
     "contenurl": null,
     "headurl": null,
+    "hlsurl": null,
     "title": null,
     "user": null,
     "watchno": null,
@@ -1451,7 +1461,93 @@
     "Head_sprite": {
       "__id__": 9
     },
+    "Play_video_Prefab": {
+      "__uuid__": "33d2f607-46fb-4306-bdc7-1cdcd3ef76da"
+    },
+    "Canvas_Node": null,
     "_id": ""
+  },
+  {
+    "__type__": "cc.Button",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_normalMaterial": null,
+    "_grayMaterial": null,
+    "duration": 0.1,
+    "zoomScale": 1.2,
+    "clickEvents": [
+      {
+        "__id__": 43
+      }
+    ],
+    "_N$interactable": true,
+    "_N$enableAutoGrayEffect": true,
+    "_N$transition": 0,
+    "transition": 0,
+    "_N$normalColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_N$pressedColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "pressedColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "_N$hoverColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "hoverColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_N$disabledColor": {
+      "__type__": "cc.Color",
+      "r": 124,
+      "g": 124,
+      "b": 124,
+      "a": 255
+    },
+    "_N$normalSprite": null,
+    "_N$pressedSprite": null,
+    "pressedSprite": null,
+    "_N$hoverSprite": null,
+    "hoverSprite": null,
+    "_N$disabledSprite": null,
+    "_N$target": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "",
+    "_componentId": "3be9cuCctFDYpGUsJ6Jg5mk",
+    "handler": "ClickButton",
+    "customEventData": ""
   },
   {
     "__type__": "cc.PrefabInfo",
